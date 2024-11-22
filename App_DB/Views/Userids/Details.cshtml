@@ -1,0 +1,42 @@
+﻿@model App_DB.Models.Userid
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Userid</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.loginid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.loginid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.loginpass)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.loginpass)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.uname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.uname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.sesid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.sesid)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

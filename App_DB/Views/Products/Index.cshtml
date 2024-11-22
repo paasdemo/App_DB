@@ -1,0 +1,53 @@
+﻿@model IEnumerable<App_DB.Models.Products>
+
+@{
+    ViewData["Title"] = "商品一覧";
+}
+
+<h1>商品一覧</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Proname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proprice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prodesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Procateid)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proprice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prodesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Procateid)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Proid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Proid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Proid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
